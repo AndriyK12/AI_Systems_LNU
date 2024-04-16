@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>AR Spectra - AR-Vision Glasses</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="dropdown-container">
+                <button class="dropdown-button" id="dropdown-btn">Menu</button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="index.html">Home</a>
+                    <a href="ar-vision.html">AR-Vision Glasses</a>
+                    <a href="ar-life.html">AR-Life Glasses</a>
+                    <a href="ar-professional.html">AR-Professional Glasses</a>
+                    <a href="ar-innovator.html">AR-Innovator Glasses</a>
+                    <a href="ar-fit.html">AR-Fit Glasses</a>
+                    <a href="ar-entertainment.html">AR-Entertainment Glasses</a>
+                    <a href="ar-news.html">AR-News Glasses</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>AR-Explorer Glasses</h1>
+            <img src="ar-explorer-glasses.png" alt="AR-Vision Glasses">
+            <p>Dive into a new dimension with our AR-Explorer Glasses! These advanced glasses offer an immersive augmented reality experience that brings adventure to your doorstep. Explore hidden wonders, embark on virtual safaris, and learn new skills – all from the comfort of your own home or office.</p>
+            <audio controls>
+                <source src="AR-Explorer Glasses.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 AR Spectra. All rights reserved.</p>
+    </footer>
+    <button id="chat-bot-button" class="chat-bot-button">
+        <img src="chat-bot-icon.png" alt="Chat Bot">
+    </button>
+    <div id="chat-window">
+        <div id="chat-header">
+            <span>Chat with our bot</span>
+            <button id="chat-close-button">&#10006;</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="chat-input-text" placeholder="Enter your message...">
+            <button id="chat-send-button">Send</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
