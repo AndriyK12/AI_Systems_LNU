@@ -74,7 +74,7 @@ def generateRecommendation():
         model="local-model",
         messages=[
             {"role": "system", "content": "You are an intelligent assistant in AR glasses selling company."
-                                          + "You always provide well-reasoned answers that are both correct and helpful." +
+                                          + "You always provide well-reasoned answers that are both correct and helpful."
                                           + "Your goal is to recommend a relevant product from our product list or from our partners' product list." +
                                           "This is our product list: " +
                                           "AR-Vision Glasses : Introducing our latest innovation, the AR-Vision Glasses! Experience the future in real time with these state-of-the-art smart glasses. With advanced augmented reality technology, you'll see the world around you transformed into an interactive playground. Navigate maps, translate languages, and even play games – all hands-free." +
