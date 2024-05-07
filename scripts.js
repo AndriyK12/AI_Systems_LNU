@@ -12,7 +12,7 @@ const chatInputText = document.getElementById('chat-input-text');
 const chatSendButton = document.getElementById('chat-send-button');
 const chatCloseButton = document.getElementById('chat-close-button');
 
-chatBotButton.addEventListener('click', function() {
+chatBotButton.addEventListener('click', function () {
     chatWindow.style.display = 'block';
 });
 
@@ -24,14 +24,14 @@ chatSendButton.addEventListener('click', async () => {
         chatMessages.appendChild(messageDiv);
         chatInputText.value = '';
     }
-    
+
     if (message !== '') {
         const response = await fetch('http://localhost:5000/chatbot', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({message})
         });
 
         const data = await response.json();
@@ -46,7 +46,49 @@ chatSendButton.addEventListener('click', async () => {
     }
 });
 
-chatCloseButton.addEventListener('click', function() {
+chatCloseButton.addEventListener('click', function () {
     chatWindow.style.display = 'none';
 });
 
+document.getElementById("likeButton").addEventListener("click", function () {
+    var message = this.getAttribute("data-message"); // Отримуємо значення з атрибута data-message
+    fetch('/addInterest', {
+        method: 'POST',
+        body: JSON.stringify({message: message}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Відповідь від сервера:', data);
+            document.getElementById('statusMessage').innerText = `Запит на додавання інтересу "${data.message}" успішно оброблено.`;
+        })
+        .catch(error => {
+            console.error('Помилка:', error);
+            document.getElementById('statusMessage').innerText = 'Помилка при відправленні запиту.';
+        });
+});
+
+document.getElementById("recommendationButton").addEventListener("click", function () {
+    fetch('/generateRecommendation')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log('Рекомендація:', data);
+            document.getElementById('recommendationResult').innerText = data;
+        })
+        .catch(error => {
+            console.error('Помилка:', error);
+            document.getElementById('recommendationResult').innerText = 'Помилка при отриманні рекомендації.';
+        });
+});
