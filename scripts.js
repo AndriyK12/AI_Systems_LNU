@@ -52,7 +52,7 @@ chatCloseButton.addEventListener('click', function () {
 
 document.getElementById("likeButton").addEventListener("click", function () {
     var message = this.getAttribute("data-message"); // Отримуємо значення з атрибута data-message
-    fetch('/addInterest', {
+    fetch('http://localhost:5000/addInterest', {
         method: 'POST',
         body: JSON.stringify({message: message}),
         headers: {
@@ -76,7 +76,7 @@ document.getElementById("likeButton").addEventListener("click", function () {
 });
 
 document.getElementById("recommendationButton").addEventListener("click", function () {
-    fetch('/generateRecommendation')
+    fetch('http://localhost:5000/generateRecommendation')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

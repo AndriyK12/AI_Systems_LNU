@@ -16,7 +16,7 @@ client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 
 posts = ""
 
-with open("twitter\\description.txt", 'r') as file:
+with open("twitter\\description.txt.txt", 'r') as file:
     posts = file.read()
 
 completion = client.chat.completions.create(
@@ -25,7 +25,7 @@ completion = client.chat.completions.create(
     {"role": "system", "content": "You are a twitter admin in AR glasses selling company. "
     + "Your task is to generate a post. You are forbiden to type more than 30 words. You are forbiden to use emojis. "
     + "You are forbiden to use more then 2 hastags. "
-    + "You get a description and previous posts. "
+    + "You get a description.txt and previous posts. "
     + "You can use previous posts as a source of inspiration. "
     + "You have to write a new post about different type of AR Glasses then the previous post. "
     + "Posts must be interesting and engaging to buy our AR glasses. "},
@@ -37,5 +37,5 @@ completion = client.chat.completions.create(
 newPost = completion.choices[0].message.content
 resource = twitter_client.create_tweet(text=newPost)
 
-with open("twitter\\description.txt", 'a') as file:
+with open("twitter\\description.txt.txt", 'a') as file:
     file.write("\nPost\n" + newPost + "\n")
