@@ -108,12 +108,12 @@
             return response.text();
         })
         .then(data => {
-            console.log('Рекомендація:', data);
+            console.log('recommendation:', data);
             document.getElementById('recommendationResult').innerText = data;
         })
         .catch(error => {
-            console.error('Помилка:', error);
-            document.getElementById('recommendationResult').innerText = 'Помилка при отриманні рекомендації.';
+            console.error('error:', error);
+            document.getElementById('recommendationResult').innerText = 'error';
         });
     });
 </script>

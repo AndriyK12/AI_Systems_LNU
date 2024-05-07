@@ -66,11 +66,11 @@ document.getElementById("likeButton").addEventListener("click", function () {
             return response.json();
         })
         .then(data => {
-            console.log('Відповідь від сервера:', data);
+            console.log('response:', data);
             document.getElementById('statusMessage').innerText = `Запит на додавання інтересу "${data.message}" успішно оброблено.`;
         })
         .catch(error => {
-            console.error('Помилка:', error);
-            document.getElementById('statusMessage').innerText = 'Помилка при відправленні запиту.';
+            console.error('Error:', error);
+            document.getElementById('statusMessage').innerText = 'Error.';
         });
 });
