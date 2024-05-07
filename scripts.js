@@ -49,4 +49,3 @@ chatSendButton.addEventListener('click', async () => {
 chatCloseButton.addEventListener('click', function() {
     chatWindow.style.display = 'none';
 });
-
