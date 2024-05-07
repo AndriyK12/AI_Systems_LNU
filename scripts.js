@@ -74,21 +74,3 @@ document.getElementById("likeButton").addEventListener("click", function () {
             document.getElementById('statusMessage').innerText = 'Помилка при відправленні запиту.';
         });
 });
-
-document.getElementById("recommendationButton").addEventListener("click", function () {
-    fetch('http://localhost:5000/generateRecommendation')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log('Рекомендація:', data);
-            document.getElementById('recommendationResult').innerText = data;
-        })
-        .catch(error => {
-            console.error('Помилка:', error);
-            document.getElementById('recommendationResult').innerText = 'Помилка при отриманні рекомендації.';
-        });
-});

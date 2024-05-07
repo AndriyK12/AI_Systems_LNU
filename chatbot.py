@@ -9,7 +9,7 @@
 #   messages=[
 #     {"role": "system", "content": "You are an intelligent assistant in AR glasses selling company chatbot." 
 #      + "You always provide well-reasoned answers that are both correct and helpful."+
-#       "The product description : " +
+#       "The product description.txt : " +
 #       "AR-Vision Glasses : Introducing our latest innovation, the AR-Vision Glasses! Experience the future in real time with these state-of-the-art smart glasses. With advanced augmented reality technology, you'll see the world around you transformed into an interactive playground. Navigate maps, translate languages, and even play games – all hands-free."+
 #       "AR-Life Glasses : Upgrade your daily routine with our AR-Life Glasses. Designed for convenience and style, these sleek glasses blend seamlessly into your life. Stay connected with real-time notifications, make hands-free calls, and enjoy a heads-up display of crucial information – all while keeping your focus on the world around you."+
 #       "AR-Explorer Glasses : Dive into a new dimension with our AR-Explorer Glasses! These advanced glasses offer an immersive augmented reality experience that brings adventure to your doorstep. Explore hidden wonders, embark on virtual safaris, and learn new skills – all from the comfort of your own home or office."+
@@ -36,7 +36,7 @@ client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 history = [
     {"role": "system", "content": "You are an intelligent assistant in AR glasses selling company chatbot." 
      + "You always provide well-reasoned answers that are both correct and helpful."+
-      "The product description : " +
+      "The product description.txt : " +
       "AR-Vision Glasses : Introducing our latest innovation, the AR-Vision Glasses! Experience the future in real time with these state-of-the-art smart glasses. With advanced augmented reality technology, you'll see the world around you transformed into an interactive playground. Navigate maps, translate languages, and even play games – all hands-free."+
       "AR-Life Glasses : Upgrade your daily routine with our AR-Life Glasses. Designed for convenience and style, these sleek glasses blend seamlessly into your life. Stay connected with real-time notifications, make hands-free calls, and enjoy a heads-up display of crucial information – all while keeping your focus on the world around you."+
       "AR-Explorer Glasses : Dive into a new dimension with our AR-Explorer Glasses! These advanced glasses offer an immersive augmented reality experience that brings adventure to your doorstep. Explore hidden wonders, embark on virtual safaris, and learn new skills – all from the comfort of your own home or office."+
