@@ -65,7 +65,7 @@ def addInterest():
 
 @app.route('/generateRecommendation', methods=['GET'])
 def generateRecommendation():
-    with open("Recommendation System\\description.txt.txt", 'r') as file:
+    with open("Recommendation System\\description.txt", 'r') as file:
         partnerProductDescription = file.read()
     with open("Recommendation System\\usersInterests.txt", 'r') as file:
         listOfUsersInterests = file.read()
