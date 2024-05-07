@@ -90,7 +90,7 @@ def generateRecommendation():
             {"role": "user",
              "content": "Give a list of recommended products if the user is interested in " + listOfUsersInterests}
         ],
-        temperature=0.7
+        temperature=0.1
     )
 
     return completion.choices[0].message.content
@@ -100,7 +100,7 @@ def append_to_user_interests(data):
         with open("Recommendation System\\usersInterests.txt", 'a') as file:
             file.write(data + ', ')
     except Exception as e:
-        print("Сталася помилка при додаванні тексту до файлу:", str(e))
+        print("Error:", str(e))
 
 def clear_user_interests():
     print("works")
@@ -108,7 +108,7 @@ def clear_user_interests():
         with open("Recommendation System\\usersInterests.txt", 'w') as file:
             file.write('')
     except Exception as e:
-        print("Сталася помилка при видаленні даних з файлу:", str(e))
+        print("Error:", str(e))
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000)  # Запуск сервера на localhost:5000
