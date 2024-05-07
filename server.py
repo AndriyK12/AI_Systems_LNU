@@ -34,5 +34,20 @@ def chatbot():
     bot_response = completion.choices[0].message.content
     return jsonify({'response': bot_response})
 
+@app.route('/feedback', methods=['POST'])
+def save_feedback():
+    name = request.form['name']
+    email = request.form['email']
+    feedback = request.form['feedback']
+
+    feedback_message = f"\nName: {name}; Email: {email}; Feedback: {feedback}"
+
+    with open('feedback/reviews.txt', 'a') as f:
+        f.write(feedback_message)
+
+    response = jsonify({'message': 'Feedback received and saved successfully!'})
+
+    return response, 200
+
 if __name__ == '__main__':
     app.run(host='localhost', port=5000)  # Запуск сервера на localhost:5000
