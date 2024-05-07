@@ -16,7 +16,7 @@
             <a href="ar-explorer.html">AR-Explorer Glasses</a>
             <a href="ar-professional.html">AR-Professional Glasses</a>
             <a href="ar-innovator.html">AR-Innovator Glasses</a>
-            <a href="ar-fit.html">AAR-Fit Glasses</a>
+            <a href="ar-fit.html">AR-Fit Glasses</a>
             <a href="ar-entertainment.html">AR-Entertainment Glasses</a>
             <a href="ar-news.html">AR-News Glasses</a>
             <a href="feedbacks-page.html">Feedback</a>
@@ -73,11 +73,11 @@
             future of human-computer interaction.</p>
         <a href="ar-vision.html" class="cta-button">Learn More</a>
         <div id="recommendationResult" class="like-button"></div>
-
+        <button id="generate" class="like-button">
+            <img src="generate_icon.png" alt="generate" width="50" height="50">
+        </button>
     </section>
-    <button id="generate" class="like-button">
-        <img src="generate_icon.png" alt="generate" width="50" height="50">
-    </button>
+
 </main>
 <footer>
     <p>&copy; 2023 AR Spectra. All rights reserved.</p>
@@ -101,20 +101,20 @@
 <script>
     document.getElementById("generate").addEventListener("click", function () {
         fetch('http://localhost:5000/generateRecommendation')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log('recommendation:', data);
-            document.getElementById('recommendationResult').innerText = data;
-        })
-        .catch(error => {
-            console.error('error:', error);
-            document.getElementById('recommendationResult').innerText = 'error';
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('recommendation:', data);
+                document.getElementById('recommendationResult').innerText = data;
+            })
+            .catch(error => {
+                console.error('error:', error);
+                document.getElementById('recommendationResult').innerText = 'error';
+            });
     });
 </script>
 </body>
